@@ -130,13 +130,28 @@
         border-radius: 6px;
         border: 1px solid rgba(255, 50, 50, 0.3);
     }
+    a{
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        text-decoration: none;
+        padding: 10px ;
+        background-color: white;
+        color: black;
+        border-radius: 15px;
+    }
+    a:hover{
+        color: red;
+    }
 </style>
 
 <body>
+      <a href="index.html" >Home</a>
     <div class="container">
         <h2>Login</h2>
         <input type="email" id="email" placeholder="Email">
         <input type="password" id="password" placeholder="Password">
+      
         <button id="loginBtn" onclick="handleLogin()"> Login</button>
         <div id="error"></div>
     </div>
