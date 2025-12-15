@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+    body {
+        margin: 0;
+        font-family: "Poppins", Arial, sans-serif;
+        background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+        background-size: 300% 300%;
+        animation: bgMove 10s infinite alternate ease-in-out;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        color: white;
+    }
+
+    
+    @keyframes bgMove {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        100% {
+            background-position: 100% 50%;
+        }
+    }
+
+   
+    .navbar {
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(12px);
+        padding: 18px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.4);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+  
+    .navbar .logo {
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+  
+    .navbar button {
+        padding: 10px 25px;
+        background: linear-gradient(135deg, #ffefba, #ffffff);
+        color: #2c3e50;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s;
+        box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .navbar button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0px 10px 25px rgba(255, 255, 255, 0.3);
+    }
+
+   
+    .hero {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 40px;
+        animation: fadeIn 1s ease-out;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .hero h1 {
+        font-size: 50px;
+        margin-bottom: 15px;
+        font-weight: 700;
+        text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    
+    .hero p {
+        font-size: 22px;
+        margin-bottom: 30px;
+        opacity: 0.9;
+    }
+
+    
+    .hero button {
+        padding: 15px 40px;
+        background: linear-gradient(135deg, #ffefba, #ffffff);
+        color: #2c3e50;
+        border: none;
+        border-radius: 30px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s;
+        box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    .hero button:hover {
+        transform: translateY(-4px);
+        box-shadow: 0px 15px 45px rgba(0, 0, 0, 0.35);
+    }
+
+    /* Features section */
+    .features {
+        display: flex;
+        gap: 30px;
+        margin-top: 50px;
+    }
+
+    
+    .feature-card {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        padding: 25px;
+        border-radius: 18px;
+        width: 200px;
+        transition: 0.35s;
+        box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .feature-card:hover {
+        transform: translateY(-6px) scale(1.05);
+        background: rgba(255, 255, 255, 0.25);
+    }
+
+    
+    .feature-card .icon {
+        font-size: 45px;
+        margin-bottom: 15px;
+    }
+
+   
+    .feature-card h3 {
+        margin: 10px 0;
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    
+    .feature-card p {
+        font-size: 14px;
+        opacity: 0.85;
+    }
+</style>
+
+<body>
+    <div class="navbar">
+        <div class="logo">MyApp</div>
+        <button onclick="goToLogin()">Login</button>
+    </div>
+    <div class="hero">
+        <h1>Welcome to MyApp! 🚀</h1>
+        <p>Aapka digital journey yahan se shuru hota hai</p>
+        <button onclick="goToLogin()">Get Started</button>
+
+        <div class="features">
+            <div class="feature-card">
+                <div class="icon">⚡</div>
+                <h3>Fast</h3>
+                <p>Lightning fast performance</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🔒</div>
+                <h3>Secure</h3>
+                <p>Bank-level security</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">✨</div>
+                <h3>Easy</h3>
+                <p>Simple and intuitive</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function goToLogin() {
+            window.location.href = "login.html"
+        }
+        const token = localStorage.getItem("token")
+        if (token) {
+            window.location.href = "dashboard.html";
+        }
+    </script>
+
+</body>
+
+</html>
